@@ -4,6 +4,9 @@
   width: 100%;
   background: #fff;
 }
+.book .book-body .page-wrapper {
+margin-top: 50px;
+}
 .book.color-theme-1 .book-header {
   background: #f3eacb;
 }
@@ -21,6 +24,6 @@
 .summary li:first-child {
   margin-top:5px;
 }
-.summary li:nth-child(2), .summary li:nth-child(3), .summary li:nth-child(4) {
+.summary li:nth-child(2) .custom-link, .summary li:nth-child(3) .custom-link, .summary li:nth-child(4) .custom-link {
   display: none;
 }
