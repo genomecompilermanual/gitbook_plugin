@@ -3,9 +3,29 @@
   position: fixed;
   width: 100%;
   background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.book.with-summary .book-body {
+  left: 0;
+}
+.book .book-summary ul.summary {
+  top: 50px
 }
 .book .book-body .page-wrapper {
-margin-top: 50px;
+  margin-top: 50px;
+  -webkit-transition: left 250ms ease;
+  -moz-transition: left 250ms ease;
+  -o-transition: left 250ms ease;
+  transition: left 250ms ease;
+}
+.book.with-summary .page-wrapper {
+  left: 150px;
+}
+.book.with-search .book-summary .book-search {
+  top:50px;
+}
+.book.with-search .book-summary ul.summary {
+  top: 100px;
 }
 .book.color-theme-1 .book-header {
   background: #f3eacb;
@@ -13,7 +33,7 @@ margin-top: 50px;
 .book.color-theme-2 .book-header {
   background: #1d1f21;
 }
-.book .book-inner .book-header h1 {
+.book .body-inner .book-header h1 {
   opacity: 1;
 }
 /* Hide checkmarks */
@@ -26,4 +46,25 @@ margin-top: 50px;
 }
 .summary li:nth-child(2) .custom-link, .summary li:nth-child(3) .custom-link, .summary li:nth-child(4) .custom-link {
   display: none;
+}
+/* Hover gray on button items */
+.book .book-header .btn:not(.pull-right):hover {
+  background: rgba(240,240,240,0.8);
+}
+/* Add GC logo */
+.book .book-header .btn.toggle-summary {
+  margin-left: 150px;
+}
+.book .book-header .btn.toggle-summary:before {
+  content: " ";
+  background: url("../../../logo.png") center no-repeat;
+  background-size: 94.4px 40px;
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  left: -145px;
+}
+.book .book-header .btn.toggle-summary:hover:before {
+  background: url("../../../logo.png") center no-repeat rgba(240,240,240,0.8);
+  background-size: 94.4px 40px;
 }

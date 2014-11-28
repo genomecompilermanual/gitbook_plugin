@@ -1,9 +1,9 @@
-require(["gitbook"], function(gitbook) {
-    gitbook.events.bind("page.change", function() {
-        // do something
-    });
-
-    gitbook.events.bind("exercise.submit", function() {
-        // do something
-    });
+$( document ).ajaxSuccess(function() {
+  $('.summary > .chapter > a').click(function() {
+    if (($(this).attr('data-level') == 1) || ($(this).attr('data-level') == 2)) {
+      $(this).parent().find('> ul').slideToggle(); return false;
+    }
+  });
+  $('.summary > .chapter > ul').hide(); 
+  $('.articles > .active').parent().show();
 });
