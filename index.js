@@ -5,7 +5,7 @@ module.exports = {
             "test.js"
         ],
         css: [
-            "test.css"
+            "styles.css"
         ],
         html: {
             "html:start": function() {

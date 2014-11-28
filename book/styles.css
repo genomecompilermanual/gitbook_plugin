@@ -1,0 +1,26 @@
+/* Fix header */
+.book .book-header {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+}
+.book.color-theme-1 .book-header {
+  background: #f3eacb;
+}
+.book.color-theme-2 .book-header {
+  background: #1d1f21;
+}
+.book .book-inner .book-header h1 {
+  opacity: 1;
+}
+/* Hide checkmarks */
+.book .book-summary ul.summary li.done>a i {
+  display: none;
+}
+/* Hide Gitbook entires which aren't needed */
+.summary li:first-child {
+  margin-top:5px;
+}
+.summary li:nth-child(2), .summary li:nth-child(3), .summary li:nth-child(4) {
+  display: none;
+}
