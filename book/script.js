@@ -7,17 +7,17 @@ $( document ).ajaxSuccess(function() {
   $('.articles>.active').parent().show();
   $('.articles>.active').children('.articles').show();
   /* Show subsections in page */
-  if ($('.chapter.active').size() > 0 && $('.book-body .articles').size() == 0)
+  if ($('.summary>.chapter.active').size() > 0 && $('.book-body .articles').size() == 0 && $('.active>.articles').size() > 0)
   {
-    $('.book-body .page-wrapper .page-inner').prepend('<br>');
-    $('.active>.articles').clone().prependTo('.book-body .page-wrapper .page-inner');
-    $('.book-body .page-wrapper .page-inner').prepend('<h3>Sections</h3>');
+    $('.book-body .page-wrapper .page-inner').append('<h3>Sections</h3>');
+    $('.active>.articles').clone().appendTo('.book-body .page-wrapper .page-inner');
+    $('.book-body .page-wrapper .page-inner').append('<br>');
   }
   /* Show subsubsections in page */
   if ($('.articles>.active>.articles').size() > 0 && $('.book-body .articles').size() == 0)
   {
-    $('.book-body .page-wrapper .page-inner').prepend('<br>');
-    $('.articles>.active>.articles').clone().prependTo('.book-body .page-wrapper .page-inner');
-    $('.book-body .page-wrapper .page-inner').prepend('<h3>Subsections</h3>');
+    $('.book-body .page-wrapper .page-inner').append('<h3>Subsections</h3>');
+    $('.articles>.active>.articles').clone().appendTo('.book-body .page-wrapper .page-inner');
+    $('.book-body .page-wrapper .page-inner').append('<br>');
   }
 });
