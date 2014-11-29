@@ -2,7 +2,7 @@ module.exports = {
     book: {
         assets: "./book",
         js: [
-            "test.js"
+            "script.js"
         ],
         css: [
             "styles.css"
