@@ -50,7 +50,7 @@
   display: none;
 }
 /* Hover gray on button items */
-.book .book-header .btn:not(.pull-right):hover {
+.book .book-header>a:not(.pull-right):hover {
   background: rgba(240,240,240,0.8);
 }
 /* Add GC logo */
