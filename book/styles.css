@@ -44,7 +44,9 @@
 .summary li:first-child {
   margin-top:5px;
 }
-.summary li:nth-child(2) .custom-link, .summary li:nth-child(3) .custom-link, .summary li:nth-child(4) .custom-link {
+.book .book-summary ul.summary li:nth-child(2) .custom-link,
+.book .book-summary ul.summary li:nth-child(3) .custom-link,
+.book .book-summary ul.summary li:nth-child(4) .custom-link {
   display: none;
 }
 /* Hover gray on button items */
