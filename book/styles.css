@@ -70,3 +70,17 @@
   background: url("../../../logo.png") center no-repeat rgba(240,240,240,0.8);
   background-size: 94.4px 40px;
 }
+/* Contents on each section */
+.book-body .page-wrapper .page-inner .articles {
+  list-style-type:none;
+  font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.book-body .page-wrapper .page-inner .articles .chapter a {
+  color: #333;
+}
+.book-body .page-wrapper .page-inner .articles .chapter .fa-check {
+  display: none;
+}
+.book-body .page-wrapper .page-inner .articles .chapter a:hover {
+  color: #008cff;
+}
