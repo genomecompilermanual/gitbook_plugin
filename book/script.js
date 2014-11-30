@@ -9,15 +9,17 @@ $( document ).ajaxSuccess(function() {
   /* Show subsections in page */
   if ($('.summary>.chapter.active').size() > 0 && $('.book-body .articles').size() == 0 && $('.active>.articles').size() > 0)
   {
-    $('.book-body .page-wrapper .page-inner').append('<h3>Sections</h3>');
+    $('.book-body .page-wrapper .page-inner').append('<h3 class="subsection">Sections</h3>');
     $('.active>.articles').clone().appendTo('.book-body .page-wrapper .page-inner');
     $('.book-body .page-wrapper .page-inner').append('<br>');
   }
   /* Show subsubsections in page */
   if ($('.articles>.active>.articles').size() > 0 && $('.book-body .articles').size() == 0)
   {
-    $('.book-body .page-wrapper .page-inner').append('<h3>Subsections</h3>');
+    $('.book-body .page-wrapper .page-inner').append('<h3 class="subsection">Subsections</h3>');
     $('.articles>.active>.articles').clone().appendTo('.book-body .page-wrapper .page-inner');
     $('.book-body .page-wrapper .page-inner').append('<br>');
   }
+  /* Add PDF link */
+  $("<a href=\"https://www.gitbook.com/download/pdf/book/genomecompiler/genome-compiler-manual\" class=\"btn pull-left\" aria-label=\"Toggle search\"><i class=\"fa fa-file-pdf-o\"></i> Get PDF</a>").insertAfter('#font-settings-wrapper');
 });

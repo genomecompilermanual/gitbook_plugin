@@ -84,3 +84,33 @@
 .book-body .page-wrapper .page-inner .articles .chapter a:hover {
   color: #008cff;
 }
+/* Hide horizontal lines */
+.body-inner .page-inner hr {
+  display: none;
+}
+/* Remove bullets */
+.book .book-body .page-wrapper .page-inner section.normal ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* Centre image and make text italic */
+.book .book-body .page-wrapper .page-inner section.normal .figure {
+  text-align: center;
+  font-style: italic;
+}
+/* Align subsections additon */
+.subsection {
+  padding: 5px 15px;
+}
+/* Add footer colours */
+.book-body {
+  background: url("../../../footer.png") no-repeat bottom;
+  background-size: 100% 7px;
+}
+/* Hide Gitbook link */
+.book .book-summary>.summary>li:nth-last-of-type(2) {
+  display: none;
+}
+.book .book-summary ul.summary li a.gitbook-link {
+  display: none;
+}
