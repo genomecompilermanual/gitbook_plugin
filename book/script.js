@@ -21,5 +21,7 @@ $( document ).ajaxSuccess(function() {
     $('.book-body .page-wrapper .page-inner').append('<br>');
   }
   /* Add PDF link */
-  $("<a href=\"https://www.gitbook.com/download/pdf/book/genomecompiler/genome-compiler-manual\" class=\"btn pull-left\" aria-label=\"Toggle search\"><i class=\"fa fa-file-pdf-o\"></i> Get PDF</a>").insertAfter('#font-settings-wrapper');
+  if ($('.get-pdf').size() > 0) {
+    $("<a href=\"https://www.gitbook.com/download/pdf/book/genomecompiler/genome-compiler-manual\" class=\"btn pull-left get-pdf\" aria-label=\"Toggle search\"><i class=\"fa fa-file-pdf-o\"></i> Get PDF</a>").insertAfter('#font-settings-wrapper');
+  }
 });
