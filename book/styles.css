@@ -13,15 +13,15 @@
 }
 .book .book-body .page-wrapper {
   margin-top: 50px;
-  width: calc(100% - 150px);
   overflow-x: hidden;
-  -webkit-transition: left 250ms ease;
-  -moz-transition: left 250ms ease;
-  -o-transition: left 250ms ease;
-  transition: left 250ms ease;
+  -webkit-transition: all 250ms ease;
+  -moz-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease;
 }
 .book.with-summary .page-wrapper {
   left: 150px;
+  width: calc(100% - 150px);
 }
 .book.with-search .book-summary .book-search {
   top:50px;
