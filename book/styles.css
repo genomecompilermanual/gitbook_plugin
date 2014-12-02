@@ -93,6 +93,11 @@
   list-style-type: none;
   padding-left: 0;
 }
+.book .book-body .page-wrapper .page-inner section.normal ul:before {
+  content: "–";
+  position: absolute;
+  margin-left: -1.1em;
+}
 /* Centre image and make text italic */
 .book .book-body .page-wrapper .page-inner section.normal .figure {
   text-align: center;
