@@ -20,6 +20,8 @@
 }
 .book.with-summary .page-wrapper {
   left: 150px;
+  width: calc(100% - 150px);
+  overflow-x: hidden;
 }
 .book.with-search .book-summary .book-search {
   top:50px;
