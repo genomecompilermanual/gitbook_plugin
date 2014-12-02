@@ -13,6 +13,8 @@
 }
 .book .book-body .page-wrapper {
   margin-top: 50px;
+  width: calc(100% - 150px);
+  overflow-x: hidden;
   -webkit-transition: left 250ms ease;
   -moz-transition: left 250ms ease;
   -o-transition: left 250ms ease;
@@ -20,8 +22,6 @@
 }
 .book.with-summary .page-wrapper {
   left: 150px;
-  width: calc(100% - 150px);
-  overflow-x: hidden;
 }
 .book.with-search .book-summary .book-search {
   top:50px;
