@@ -72,6 +72,24 @@
   background: url("../../../logo.png") center no-repeat rgba(240,240,240,0.8);
   background-size: 94.4px 40px;
 }
+@media (max-width: 600px) {
+  .book .book-header .btn.toggle-summary {
+    margin-left: 0;
+  }
+  .book .book-header .btn.toggle-summary:before {
+    content: " ";
+    background: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  .book .book-header .btn.toggle-summary:hover:before {
+    background: none;
+  }
+  .book .book-header .btn.pull-right {
+    display: none;
+  }
+}
 /* Contents on each section */
 .book-body .page-wrapper .page-inner .articles {
   list-style-type:none;
