@@ -72,7 +72,7 @@
   background: url("../../../logo.png") center no-repeat rgba(240,240,240,0.8);
   background-size: 94.4px 40px;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .book .book-header .btn.toggle-summary {
     margin-left: 0;
   }
