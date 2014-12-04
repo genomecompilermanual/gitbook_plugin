@@ -8,6 +8,15 @@
 .book.with-summary .book-body {
   left: 0;
 }
+@media (max-width: 600px) {
+  .book.with-summary .book-body {
+    -webkit-transform: translate(0,0); 
+    -moz-transform: translate(0,0); 
+    -ms-transform: translate(0,0); 
+    -o-transform: translate(0,0); 
+    transform: translate(0,0);
+  }
+}
 .book .book-summary ul.summary {
   top: 50px
 }
