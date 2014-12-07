@@ -2,7 +2,7 @@
   "name": "gitbook-plugin-simple",
   "description": "Plugin for GitBook",
   "main": "index.js",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "engines": {
     "gitbook": "*"
   },
