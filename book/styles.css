@@ -161,3 +161,12 @@
 .book.color-theme-2 .book-body .page-wrapper .page-inner .articles .chapter a:hover {
   color: #008cff;
 }
+/* Fix logo hover on themed versions */
+.book.color-theme-1 .book-header .btn.toggle-summary:hover:before {
+  color: #73553c;
+  background: 0;
+}
+.book.color-theme-2 .book-header .btn.toggle-summary:hover:before {
+  color: #c9c9c9;
+  background: 0;
+}
