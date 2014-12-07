@@ -164,9 +164,11 @@
 /* Fix logo hover on themed versions */
 .book.color-theme-1 .book-header .btn.toggle-summary:hover:before {
   color: #73553c;
-  background: 0;
+  background: url("../../../logo.png") center no-repeat #f3eacb;
+  background-size: 94.4px 40px;
 }
 .book.color-theme-2 .book-header .btn.toggle-summary:hover:before {
   color: #c9c9c9;
-  background: 0;
+  background: url("../../../logo.png") center no-repeat #1d1f21;
+  background-size: 94.4px 40px;
 }
