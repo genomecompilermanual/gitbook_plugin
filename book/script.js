@@ -21,7 +21,7 @@ $( document ).ajaxSuccess(function() {
     $('.book-body .page-wrapper .page-inner').append('<br>');
   }
   /* Add Introduction link in contents to prevent numbering */
-  if (window.location.pathname == "/INTRODUCTION.html")
+  if (window.location.pathname == "/Introduction/README.html")
   {
     active = " active";
   }
@@ -29,7 +29,20 @@ $( document ).ajaxSuccess(function() {
   {
     active = "";
   }
-  $('<li class="chapter'+active+'" data-level="0" data-path="INTRODUCTION.html"><a href="./INTRODUCTION.html"></i>Introduction</a></li>').insertAfter('li[data-level=0]');
+  if ($('.js-added').size() <= 0)
+  {
+    function count(s1, letter) {
+      match = s1.match( new RegExp(letter,'g') )
+      return match ? match.length : 0;
+    }
+    level = count($('.active').attr('data-level'),'\\.')+1;
+    function repeat(str, times) {
+        return new Array(times + 1).join(str);
+    }
+    pre_path = (level==1) ? './' : repeat('../', level-1);
+    $('li[data-path="Introduction/README.html"]').remove();
+    $('<li class="chapter js-added'+active+'" data-level="0" data-path="Introduction/README.html"><a href="'+pre_path+'Introduction/README.html"></i>Introduction</a></li>').insertAfter('li[data-level=0]');
+  }
   /* Add PDF link */
   if ($('.get-pdf').size() == 0) {
     $("<a href=\"https://www.gitbook.com/download/pdf/book/genomecompiler/genome-compiler-manual\" class=\"btn pull-left get-pdf\" aria-label=\"Toggle search\"><i class=\"fa fa-file-pdf-o\"></i> Get PDF</a>").insertAfter('#font-settings-wrapper');
