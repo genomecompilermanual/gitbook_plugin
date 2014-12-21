@@ -39,7 +39,7 @@ $( document ).ajaxSuccess(function() {
     function repeat(str, times) {
         return new Array(times + 1).join(str);
     }
-    pre_path = (level==1) ? './' : repeat('../', level-1);
+    pre_path = ($('.active').attr('data-level')==0)  ? './' : repeat('../', level);
     $('li[data-path="Introduction/README.html"]').remove();
     $('<li class="chapter js-added'+active+'" data-level="0" data-path="Introduction/README.html"><a href="'+pre_path+'Introduction/README.html"></i>Introduction</a></li>').insertAfter('li[data-level=0]');
   }
