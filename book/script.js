@@ -20,6 +20,16 @@ $( document ).ajaxSuccess(function() {
     $('.articles>.active>.articles').clone().appendTo('.book-body .page-wrapper .page-inner');
     $('.book-body .page-wrapper .page-inner').append('<br>');
   }
+  /* Add Introduction link in contents to prevent numbering */
+  if (window.location.pathname == "/INTRODUCTION.html")
+  {
+    active = " active";
+  }
+  else 
+  {
+    active = "";
+  }
+  $('<li class="chapter'+active+'" data-level="0" data-path="INTRODUCTION.html"><a href="./INTRODUCTION.html"></i>Introduction</a></li>').insertAfter('li[data-level=0]');
   /* Add PDF link */
   if ($('.get-pdf').size() == 0) {
     $("<a href=\"https://www.gitbook.com/download/pdf/book/genomecompiler/genome-compiler-manual\" class=\"btn pull-left get-pdf\" aria-label=\"Toggle search\"><i class=\"fa fa-file-pdf-o\"></i> Get PDF</a>").insertAfter('#font-settings-wrapper');
