@@ -19,7 +19,40 @@ module.exports = {
             "head:end": "<!-- head:end -->",
 
             "body:start": "<!-- body:start -->",
-            "body:end": "<!-- body:end -->"
+            "body:end": function() {
+                var config = this.options.pluginsConfig.simple || {};
+                
+                if (!config.token) {
+                	throw "Need to option 'token' for Google Analytics plugin";
+                }
+                
+                if (!config.configuration) {
+                	config.configuration = 'auto';
+                }
+
+                if(typeof config.configuration === 'object' && config.configuration !== null) {
+                	configuration = JSON.stringify(config.configuration);
+                }
+                else if (['auto', 'none'].indexOf(config.configuration) != -1) {
+                	configuration = "'" + config.configuration + "'";
+                }
+              
+                if (typeof config.domains !== null) {
+                  multi_domain = "{'allowLinker': true}";
+                  domains = config.domains;
+                }
+              
+                config.domains = "'genomecompiler.com','help.genomecompiler.com','designer.genomecompiler.com'";
+
+                return "<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){"
+                + "(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),"
+                + "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)"
+                + "})(window,document,'script','//www.google-analytics.com/analytics.js','ga');"
+                + "ga('create', '"+config.token+"', "+configuration+", "+multi_domain+);"
+                + "ga('require', 'linker');"
+                + "ga('linker:autoLink', ["+domains+"] );"
+                + "ga('send', 'pageview');</script>";
+            }
         }
     },
     hooks: {

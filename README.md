@@ -1,7 +1,7 @@
 GitBook Plugin
 ==============
 
-This is a simple plugin for GitBook.
+This is a simple plugin for GitBook - it includes some basic theming, multi-domain Google Analytics, subsections listed within the book and an additional, non-numbered introduction page.
 
 Install it using: ```$ npm install gitbook-plugin```
 

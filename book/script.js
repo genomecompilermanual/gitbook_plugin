@@ -48,3 +48,13 @@ $( document ).ajaxSuccess(function() {
     $("<a href=\"https://www.gitbook.com/download/pdf/book/genomecompiler/genome-compiler-manual\" class=\"btn pull-left get-pdf\" aria-label=\"Toggle search\"><i class=\"fa fa-file-pdf-o\"></i> Get PDF</a>").insertAfter('#font-settings-wrapper');
   }
 });
+/* Add GA tracking */
+require(["gitbook"], function(gitbook) {
+    gitbook.events.bind("start", function(e, config) {
+        config.simple = config.simple || {};
+    });
+
+    gitbook.events.bind("page.change", function() {
+        ga('send', 'pageview', window.location.pathname+window.location.search);
+    });
+});
