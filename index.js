@@ -51,6 +51,8 @@ module.exports = {
                 + "ga('create', '"+config.token+"', "+configuration+", "+multi_domain+");"
                 + "ga('require', 'linker');"
                 + "ga('linker:autoLink', ["+domains+"] );"
+                + "ga('require', 'linkid', 'linkid.js');"
+                + "ga('require', 'displayfeatures');"
                 + "ga('send', 'pageview');</script>";
             }
         }
