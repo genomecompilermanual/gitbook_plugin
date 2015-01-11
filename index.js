@@ -48,7 +48,7 @@ module.exports = {
                 + "(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),"
                 + "m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)"
                 + "})(window,document,'script','//www.google-analytics.com/analytics.js','ga');"
-                + "ga('create', '"+config.token+"', "+configuration+", "+multi_domain+);"
+                + "ga('create', '"+config.token+"', "+configuration+", "+multi_domain+");"
                 + "ga('require', 'linker');"
                 + "ga('linker:autoLink', ["+domains+"] );"
                 + "ga('send', 'pageview');</script>";
