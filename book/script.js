@@ -58,3 +58,10 @@ require(["gitbook"], function(gitbook) {
         ga('send', 'pageview', window.location.pathname+window.location.search);
     });
 });
+/* Hide sidebar based on URL params */
+if (window.location.search.substr(1) == "sidebar=false") {
+  localStorage.setItem(':sidebar',false)
+}
+else if (window.location.search.substr(1) == "sidebar=true") {
+  localStorage.setItem(':sidebar',true)
+}
