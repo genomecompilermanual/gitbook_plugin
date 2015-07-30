@@ -1,3 +1,5 @@
+var sitemap = null;
+
 module.exports = {
     book: {
         assets: "./book",
@@ -59,13 +61,26 @@ module.exports = {
         // For all the hooks, this represent the current generator
 
         // This is called before the book is generated
-        "init": function() {
-            console.log("init!");
+        "init": function(start) {
+            var config = this.options.pluginsConfig.simple || {};
+            var Sitemap = require('simple-sitemap');
+            sitemap = new Sitemap(config.domain, "_book/");
+            console.log('Sitemap setup!');
+        },
+
+        "page": function(page) {
+            if (page['path']) {
+                var path = page['path']
+                sitemap.add(path);
+            }
+            return page; // Don't touch page object
         },
 
         // This is called after the book generation
-        "finish": function() {
-            console.log("finish!");
-        },
+        "finish": function(end) {
+            sitemap.flush(function() {
+                console.log('Sitemap flushed!');
+            });
+        }
     }
 };
