@@ -64,7 +64,13 @@ module.exports = {
         "init": function(start) {
             var config = this.options.pluginsConfig.simple || {};
             var Sitemap = require('simple-sitemap');
-            sitemap = new Sitemap(config.domain, "_book/");
+            var fs = require('fs');
+			var dir = "_book";
+
+			if (!fs.existsSync(dir)){
+				fs.mkdirSync(dir);
+			}
+            sitemap = new Sitemap(config.domain, dir);
             console.log('Sitemap setup!');
         },
 
