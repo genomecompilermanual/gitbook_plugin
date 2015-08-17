@@ -1,4 +1,5 @@
 var sitemap = null;
+var domain = config.domain;
 
 module.exports = {
     book: {
@@ -64,14 +65,14 @@ module.exports = {
         "init": function(start) {
             var config = this.options.pluginsConfig.simple || {};
             var Sitemap = require('simple-sitemap');
-            sitemap = new Sitemap(config.domain, "_book/");
+            sitemap = new Sitemap(domain, "_book/");
             console.log('Sitemap setup!');
         },
 
         "page": function(page) {
             if (page['path']) {
                 var path = page['path']
-                sitemap.add(config.domain+path);
+                sitemap.add(domain+path);
             }
             return page; // Don't touch page object
         },
