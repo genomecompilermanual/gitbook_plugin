@@ -1,5 +1,4 @@
 var sitemap = null;
-var domain = config.domain;
 
 module.exports = {
     book: {
@@ -71,14 +70,15 @@ module.exports = {
 			if (!fs.existsSync(dir)){
 				fs.mkdirSync(dir);
 			}
-            sitemap = new Sitemap(domain, dir);
+            sitemap = new Sitemap(config.domain, dir);
             console.log('Sitemap setup!');
         },
 
-        "page": function(page,domain) {
+        "page": function(page) {
             if (page['path']) {
                 var path = page['path'].replace('README.md','index.html')
-                sitemap.add(domain+path);
+                var config = this.options.pluginsConfig.simple || {};
+                sitemap.add(config.domain+"/"+path);
             }
             return page; // Don't touch page object
         },
