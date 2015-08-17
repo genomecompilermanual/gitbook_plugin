@@ -71,7 +71,7 @@ module.exports = {
         "page": function(page) {
             if (page['path']) {
                 var path = page['path']
-                sitemap.add(path);
+                sitemap.add(config.domain+path);
             }
             return page; // Don't touch page object
         },
